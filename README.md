@@ -22,9 +22,9 @@ This project is built in two key parts: the core algorithm and the validation "h
 
 * **`Knn.py`:** A class-based implementation of the K-Nearest Neighbor algorithm. It takes a training dataset and, for a new instance, calculates the distance to all training points, finds the "K" nearest ones, and predicts the class via majority vote.
 * **`Distance.py`:** A custom library built to support the KNN classifier, containing from-scratch implementations of multiple distance functions:
-    * **Minkowski Distance** (and its special case, Euclidean)
-    * **Cosine Similarity**
-    * **Mahalanobis Distance**
+    * **Minkowski Distance** (and its special case, Euclidean)
+    * **Cosine Similarity**
+    * **Mahalanobis Distance**
 
 ### 2. Rigorous Validation Pipeline (`Knnexperiment.py`)
 
@@ -32,8 +32,8 @@ This is the core of the project. To find the best model, a robust **5x10 Stratif
 
 1.  **Shuffle (x5):** The entire dataset is shuffled 5 separate times to create 5 different "versions" of the data. This prevents a single "lucky" data split from biasing the results.
 2.  **Split (10-Folds):** Each of the 5 shuffled datasets is then put through a **10-fold stratified cross-validation**.
-    * The data is split into 10 equal-sized "folds," ensuring that the class distribution in each fold matches the original dataset (stratification).
-    * The model is trained 10 times—each time using 9 folds for training and 1 fold for validation.
+    * The data is split into 10 equal-sized "folds," ensuring that the class distribution in each fold matches the original dataset (stratification).
+    * The model is trained 10 times—each time using 9 folds for training and 1 fold for validation.
 3.  **Grid Search:** This 5x10 validation process is run for every hyperparameter combination in a grid search to find the optimal settings.
 4.  **Evaluate:** The final performance for each combination is the **mean accuracy** across all 50 runs (5 shuffles x 10 folds). A **95% Confidence Interval (CI)** is then calculated to show the statistical range of the expected performance.
 
@@ -69,11 +69,11 @@ This project demonstrates a strong command of supervised learning theory, custom
 
 1.  Clone the repository.
 2.  Ensure you have `numpy` and `scikit-learn` installed (`sklearn` is used only for its `StratifiedKFold` and `shuffle` utilities, not for the classifier itself).
-    ```bash
-    pip install numpy scikit-learn
-    ```
+    ```bash
+    pip install numpy scikit-learn
+    ```
 3.  Run the main experiment file from your terminal:
-    ```bash
-    python Knnexperiment.py
-    ```
+    ```bash
+    python Knnexperiment.py
+    ```
 4.  The script will run the full 5x10 cross-validation for all 5 hyperparameter configurations and print the final mean accuracy, standard deviation, and confidence interval for each.
