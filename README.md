@@ -37,31 +37,7 @@ This is the core of the project. To find the best model, a robust **5x10 Stratif
 3.  **Grid Search:** This 5x10 validation process is run for every hyperparameter combination in a grid search to find the optimal settings.
 4.  **Evaluate:** The final performance for each combination is the **mean accuracy** across all 50 runs (5 shuffles x 10 folds). A **95% Confidence Interval (CI)** is then calculated to show the statistical range of the expected performance.
 
-```mermaid
-graph LR
-    subgraph "10-Fold Cross Validation (Example Iteration)"
-    direction LR
-    F1[Fold 1]:::train
-    F2[Fold 2]:::train
-    F3[Fold 3]:::train
-    F4[Fold 4]:::train
-    F5[Fold 5]:::train
-    F6[Fold 6]:::train
-    F7[Fold 7]:::train
-    F8[Fold 8]:::train
-    F9[Fold 9]:::train
-    F10[Fold 10]:::test
-    end
-    
-    %% Styling for the blocks
-    classDef train fill:#e1f5fe,stroke:#01579b,color:#01579b,stroke-width:2px;
-    classDef test fill:#ffccbc,stroke:#bf360c,color:#bf360c,stroke-width:2px;
-```
-
-![10-Fold Cross Validation](https://upload.wikimedia.org/wikipedia/commons/b/b5/K-fold_cross_validation_EN.jpg)
-> **[Image: Diagram of 10-fold cross-validation]**
->
-> *(**Developer Note:** A simple diagram showing a dataset being split into 10 folds, with one fold used for testing and nine for training, would be perfect here.)*
+![Image: Diagram of 10-fold cross-validation](.media/cross_validation.png)
 
 ---
 
