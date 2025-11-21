@@ -57,6 +57,8 @@ graph LR
     classDef train fill:#e1f5fe,stroke:#01579b,color:#01579b,stroke-width:2px;
     classDef test fill:#ffccbc,stroke:#bf360c,color:#bf360c,stroke-width:2px;
 ```
+
+![10-Fold Cross Validation](https://upload.wikimedia.org/wikipedia/commons/b/b5/K-fold_cross_validation_EN.jpg)
 > **[Image: Diagram of 10-fold cross-validation]**
 >
 > *(**Developer Note:** A simple diagram showing a dataset being split into 10 folds, with one fold used for testing and nine for training, would be perfect here.)*
